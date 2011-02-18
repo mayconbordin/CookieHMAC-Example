@@ -2,6 +2,7 @@
 
 //Inclui as bibliotecas necessárias
 require ('./lib/Browser/Browser.php');
+require ('./lib/Ip.php');
 
 //Instancia o objeto para obter os dados do navegador
 $browser = new Browser();
@@ -19,7 +20,8 @@ $userName = 'admin';
 $key = $browser->getBrowser().
 	   $browser->getVersion().
 	   $browser->getUserAgent().
-	   $browser->getPlatform();
+	   $browser->getPlatform().
+	   Ip::getIp();
 	   
 //Transforma a chave em hash
 //Essa chave precisa ser guardada em associação com o usuário para posterior
